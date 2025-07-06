@@ -1,0 +1,17 @@
+{
+    "name": "Julia Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true
+    },
+    "extensions": [
+        "julialang.language-julia",
+        "ms-vscode.toml"
+    ],
+    "remoteUser": "vscode",
+    "postCreateCommand": "julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.precompile()'"
+}
